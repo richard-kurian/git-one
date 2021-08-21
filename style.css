@@ -1,56 +1,44 @@
-body{
 
-
-    background-color: rgb(240, 207, 23);
-
-    padding:0px;
-    margin: 0px;
-}
-
-
-.calculator{
-
-    display: grid;
-     
-    grid-template-columns: 150px 150px;
-
-background-color: seashell;
-
-margin-left: 200px;
-margin-top: 200px;
-margin-bottom: 200px;
-
-/*height: 723px;
-width: 500px;*/
-
-grid-template-columns: repeat(4,100px);
-grid-template-rows: repeat(4,100px);
-
-width: 435px; 
-  height: 546px;   /*  this only fits when given manually*/
- font-size: 20px;     /*  this is not working*/
-
-gap: 10px;
-}
-
-
-.outputScreen{
-
-    background-color: turquoise;
-    grid-column-start: 1;
-    grid-column-end: -1;
-    float: right;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
-    word-wrap: break-word;
-    word-break: break-all;
-    padding: 10px;
-}
-
-button{
-    border-radius: 10px;
-    font-size: 28px;
-}
+    html {
+        font-family: sans-serif;
+        background: #ffc600;
+      }
+  
+      .inbox {
+        max-width: 400px;
+        margin: 50px auto;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+      }
+  
+      .item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #F1F1F1;
+      }
+  
+      .item:last-child {
+        border-bottom: 0;
+      }
+  
+  
+      input:checked + p {
+        background: #F9F9F9;
+        text-decoration: line-through;
+      }
+  
+      input[type="checkbox"] {
+        margin: 20px;
+      }
+  
+      p {
+        margin: 0;
+        padding: 20px;
+        transition: background 0.2s;
+        flex: 1;
+        font-family: 'helvetica neue';
+        font-size: 20px;
+        font-weight: 200;
+        border-left: 1px solid #D1E2FF;
+      }

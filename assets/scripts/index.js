@@ -1,18 +1,24 @@
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
-/*function getInputValue(){
-    let input = event.target.innerText
-    console.log(input);
-    printValue(input);
-}*/
+let lastChecked;
 
+function handleCheck(e){
 
+    let inBetween=false;
+    
+    if(e.shiftKey && this.checked){
+        checkboxes.forEach(checkbox=>{
+            console.log(checkbox)
+            if(checkbox===this||checkbox===lastChecked){
+                inBetween=!inBetween
+                console.log("starting to check item sinn between")
+            }
+            if (inBetween) {
+                checkbox.checked = true;
+              }
+        })
+    }
+    lastChecked=this;
+}
 
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.querySelector('[data-delete]')
-const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector('[data-previous-operand]')
-const currentOperandTextElement = document.querySelector('[data-current-operand]')
-
-
+checkboxes.forEach(checkbox=>checkbox.addEventListener('click',handleCheck))
